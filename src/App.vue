@@ -13,9 +13,10 @@
 </template>
 
 <script>
-export default {
-  name: 'App'
-};
+  import header from './components/header/header';
+  export default {
+    name: 'App'
+  };
 </script>
 
 <style>
