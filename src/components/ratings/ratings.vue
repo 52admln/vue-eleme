@@ -1,7 +1,7 @@
 <template>
-  <div class="header">
-    我是header
-  </div>
+    <div>
+      I am ratings
+    </div>
 </template>
 
 <script type="text/ecmascript-6">
