@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vue-element
 
 > A Vue.js project
@@ -19,3 +20,7 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# vue-eleme
+运用 Vue 制作的饿了么 Web App
+>>>>>>> 3a67ed1ba29896d4c3a323b0ffebd13c91b3f3db
