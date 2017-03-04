@@ -25,5 +25,6 @@ export default new Router({
       name: 'ratings',
       component: ratings
     }
-  ]
+  ],
+  linkActiveClass: 'active'
 });
