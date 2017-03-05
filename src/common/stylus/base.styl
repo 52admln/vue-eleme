@@ -1,7 +1,17 @@
-body, html 
+body, html
   line-height: 1
   font-weight: 200
   font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif
+
+.clearfix
+  display: inline-block
+  &::after
+    display: block
+    content: '.'
+    height: 0
+    line-height 0
+    clear: both
+    visibility hidden
 
 // 解决 1px 像素问题
 @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)

@@ -48,9 +48,9 @@
   };
 </script>
 
-<style lang="stylus" type="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus">
   @import "./common/stylus/mixin.styl"
-  
+
   .tab
     display: flex
     width: 100%
@@ -58,7 +58,7 @@
     line-height: 40px
     // border-bottom: 1px solid rgba(7,17,27,0.1)
     border-1px(rgba(7,17,27,0.1))
-    
+
     .tab-item
       flex: 1
       text-align: center
@@ -66,6 +66,6 @@
         display: block
         font-size: 14px
         color: rgb(77,85,93)
-        &.active 
+        &.active
           color: rgb(240, 20, 20)
 </style>
