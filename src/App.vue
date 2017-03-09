@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import header from './components/header/header';
   import axios from 'axios';
   //  状态码 0 表示成功
@@ -35,7 +35,7 @@
           if (response.data.errno === ERR_OK) {
             // 获取数据
             this.seller = response.data.data;
-            console.log(this.seller);
+//            console.log(this.seller);
           }
         })
         .catch((error) => {
