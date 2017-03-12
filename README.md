@@ -56,4 +56,6 @@ border-1px($color)
 
 flex: [等分] [内容不足时缩放情况] [占位空间]
 
-4.
+4. `display: inline-block` 间隙问题
+
+解决方法： 将父元素的 `font-size` 设置为 `0`

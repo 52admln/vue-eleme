@@ -13,7 +13,7 @@
       </div>
     </div>
     <!--出口-->
-    <router-view></router-view>
+    <router-view :seller="seller"></router-view>
   </div>
 </template>
 

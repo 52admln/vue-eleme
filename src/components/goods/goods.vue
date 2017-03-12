@@ -36,10 +36,12 @@
         </li>
       </ul>
     </div>
+    <shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import shopcart from '../shopcart/shopcart..vue';
   import BScroll from 'better-scroll';
   import axios from 'axios';
   //  状态码 0 表示成功
@@ -126,6 +128,9 @@
           this.listHeight.push(height);
         }
       }
+    },
+    components: {
+      shopcart
     }
   };
 </script>
