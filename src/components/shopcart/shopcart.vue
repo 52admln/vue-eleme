@@ -33,10 +33,7 @@
       selectFoods: {
         type: Array,
         default() {
-          return [{
-            price: 10,
-            count: 5
-          }];
+          return [];
         }
       },
       deliveryPrice: {

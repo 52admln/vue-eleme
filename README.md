@@ -59,3 +59,26 @@ flex: [等分] [内容不足时缩放情况] [占位空间]
 4. `display: inline-block` 间隙问题
 
 解决方法： 将父元素的 `font-size` 设置为 `0`
+
+5. display: table 布局
+
+垂直水平居中
+
+table-cell 表格里的盒子
+
+6. nextTick()
+
+DOM渲染异步
+
+7. 使用 BetterScroll PC端点击事件触发两次
+
+解决方案：
+
+判断是否为 BScroll产生的点击事件，如果是，不执行
+
+```
+if(!event._constructed) {
+  return;
+}
+
+```
