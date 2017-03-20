@@ -31,7 +31,7 @@
                                                                 class="old">￥{{food.oldPrice}}</span>
                 </div>
                 <div class="cartcontrol-wrapper">
-                  <cartcontrol :food="food"></cartcontrol>
+                  <cartcontrol :food="food" @increment="incrementTotal"></cartcontrol>
                 </div>
               </div>
             </li>
@@ -39,7 +39,7 @@
         </li>
       </ul>
     </div>
-    <shopcart :select-foods="selectFood" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
+    <shopcart ref="shopCart" :select-foods="selectFood" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shopcart>
   </div>
 </template>
 
@@ -144,6 +144,9 @@
           height += item.clientHeight;
           this.listHeight.push(height);
         }
+      },
+      incrementTotal(target) {
+        this.$refs.shopCart.drop(target);
       }
     },
     components: {

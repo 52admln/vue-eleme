@@ -35,6 +35,7 @@
         } else {
           this.food.count++;
         }
+        this.$emit('increment', event.target);  // 子组件通过 $emit 触发父组件的方法 drop 方法
       },
       decreaseCart(event) {
         if (!event._constructed) {
@@ -58,7 +59,7 @@
       transition: all 0.4s linear
       &.move-transition
         opacity: 1
-        transform: translate3D(0, 0, 0)
+        transform: translate3d(0, 0, 0)
       .inner
         display: inline-block
         line-height: 24px
@@ -68,7 +69,7 @@
         transform: rotate(0)
       &.move-enter, &.move-leave-active
         opacity: 0
-        transform: translate3D(24px, 0, 0)
+        transform: translate3d(24px, 0, 0)
         .inner
           transform: rotate(180deg)
 
