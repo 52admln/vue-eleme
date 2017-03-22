@@ -1,6 +1,6 @@
 <template>
   <transition name="move">
-    <div v-show="showFlag" class="food" ref="food">
+    <div v-show="showFlag" class="food" ref="foodContent">
       <div class="food-content">
         <div class="image-header">
           <img :src="food.image" alt="">
@@ -30,6 +30,15 @@
           <h1 class="title">商品信息</h1>
           <p class="text">{{food.info}}</p>
         </div>
+        <split></split>
+        <div class="rating">
+          <h1 class="title">商品评价</h1>
+          <!-- 不能连着写， 要隔开 -->
+          <ratingselect :select-type="selectType"
+                        :only-content="onlyContent"
+                        :desc="desc"
+                        :ratings="food.ratings"></ratingselect>
+        </div>
       </div>
     </div>
   </transition>
@@ -40,6 +49,11 @@
   import Vue from 'vue';
   import cartcontrol from '../cartcontrol/cartcontrol.vue';
   import split from '../split/split.vue';
+  import ratingselect from '../ratingselect/ratingselect.vue';
+
+  //  const POSTIVE = 0;
+  //  const NEGATIVE = 1;
+  const ALL = 2;
 
   export default {
     props: {
@@ -49,15 +63,24 @@
     },
     data() {
       return {
-        showFlag: false
+        showFlag: false,
+        selectType: ALL,
+        onlyContent: true,
+        desc: {
+          all: '全部',
+          positive: '推荐',
+          negative: '吐槽'
+        }
       };
     },
     methods: {
       show() {
         this.showFlag = true;
+        this.selectType = ALL;
+        this.onlyContent = true;
         this.$nextTick(() => {
           if (!this.scroll) {
-            this.scroll = new BScroll(this.$refs.food, {
+            this.scroll = new BScroll(this.$refs.foodContent, {
               click: true
             });
           } else {
@@ -79,7 +102,8 @@
     },
     components: {
       cartcontrol,
-      split
+      split,
+      ratingselect
     }
   };
 </script>
