@@ -38,6 +38,24 @@
                         :only-content="onlyContent"
                         :desc="desc"
                         :ratings="food.ratings" @select="selectRating" @toggle="toggleContent"></ratingselect>
+          <div class="rating-wrapper">
+            <ul v-show="food.ratings && food.ratings.length">
+              <li v-for="rating in food.ratings" class="rating-item">
+                <div class="user">
+                  <span class="name">{{ratings.username}}</span>
+                  <img class="avatar" :src="ratings.avatar" alt="" width="12" height="12">
+                </div>
+                <div class="time">
+                  {{ratings.rateTime}}
+                </div>
+                <p class="text">
+                  <span
+                    :class="{'icon-thumb_up': rating.rateType === 0 ,'icon-icon-thumb_down': rating.rateType === 1 }"></span>{{ratings.text}}
+                </p>
+              </li>
+            </ul>
+            <div class="no-rating" v-show="!food.ratings || !food.ratings.length"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -58,6 +76,9 @@
   export default {
     props: {
       food: {
+        type: Object
+      },
+      ratings: {
         type: Object
       }
     },
