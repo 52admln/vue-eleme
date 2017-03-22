@@ -31,7 +31,7 @@
                                                                 class="old">￥{{food.oldPrice}}</span>
                 </div>
                 <div class="cartcontrol-wrapper">
-                  <cartcontrol :food="food" @increment="incrementTotal"></cartcontrol>
+                  <cartcontrol :food="food" @add="addFood"></cartcontrol>
                 </div>
               </div>
             </li>
@@ -156,8 +156,14 @@
           this.listHeight.push(height);
         }
       },
-      incrementTotal(target) {
-        this.$refs.shopCart.drop(target);
+      addFood(target) {
+        this._drop(target);
+      },
+      _drop(target) {
+        // 体验优化
+        this.$nextTick(() => {
+          this.$refs.shopCart.drop(target);
+        });
       }
     },
     components: {

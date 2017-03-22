@@ -33,11 +33,11 @@
         <split></split>
         <div class="rating">
           <h1 class="title">商品评价</h1>
-          <!-- 不能连着写， 要隔开 -->
+          <!-- 不能连着写，要隔开，前面要加冒号 -->
           <ratingselect :select-type="selectType"
                         :only-content="onlyContent"
                         :desc="desc"
-                        :ratings="food.ratings"></ratingselect>
+                        :ratings="food.ratings" @select="selectRating" @toggle="toggleContent"></ratingselect>
         </div>
       </div>
     </div>
@@ -96,8 +96,15 @@
           return;
         }
         console.log(event.target);
-        this.$emit('increment', event.target);
+        this.$emit('add', event.target);
         Vue.set(this.food, 'count', 1);
+      },
+      // 子组件改值需要由父组件来修改
+      selectRating(type) {
+        this.selectType = type;
+      },
+      toggleContent() {
+        this.onlyContent = !this.onlyContent;
       }
     },
     components: {
@@ -207,4 +214,11 @@
         padding: 0 8px
         font-size: 12px
         color: rgb(77, 85, 93)
+    .rating
+      padding-top: 18px
+      .title
+        line-height: 14px
+        margin-left: 18px
+        font-size: 14px
+        color: rgb(7, 17, 27)
 </style>

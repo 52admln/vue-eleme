@@ -35,7 +35,7 @@
         } else {
           this.food.count++;
         }
-        this.$emit('increment', event.target);  // 子组件通过 $emit 触发父组件的方法 drop 方法
+        this.$emit('add', event.target);  // 子组件通过 $emit 触发父组件的方法 drop 方法
       },
       decreaseCart(event) {
         if (!event._constructed) {

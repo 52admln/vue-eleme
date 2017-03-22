@@ -82,3 +82,19 @@ if(!event._constructed) {
 }
 
 ```
+
+8. Vue.js 2.0 父子组件通讯，子组件修改父组件传入的值，报错
+
+不能在子组件直接修改父组件传入的 props
+
+错误：
+
+`Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders`
+
+解决方法：
+
+子组件需要修改源数据时，$emit消息给父亲，由owner来同时完成数据永久性保存和内部app数据一致
+
+```
+this.$emit('changetype', type);
+```
