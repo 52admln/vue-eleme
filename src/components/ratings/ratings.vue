@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="ratings" ref="ratings">
       <div class="rating-content">
         <div class="overview">
@@ -55,7 +54,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script type="text/ecmascript-6">
